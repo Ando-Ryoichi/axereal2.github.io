@@ -1,0 +1,59 @@
+<!-- News section -->
+<section id="news" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">ニュース</h2>
+        <!-- <h3 class="section-subheading">最近のニュースです</h3> -->
+      </div>
+    </div> <!-- row -->
+
+    <div class="row top-margin-md">
+      {% for post in site.posts %}
+      <div class="col-md-3">
+        <div class="panel">
+          <a href="#{{ post.title | replace: ' ', '_' }}" data-toggle="modal">
+            <img src="{{ post.background }}"  alt="" width="100%">
+          </a>
+          <div class="panel-body">
+            <h5 class="panel-heading" style="padding: 0">{{ post.title }}</h5>
+            <a href="#{{ post.title | replace: ' ', '_' }}" data-toggle="modal">
+              <p class="panel-text">{{ post.content | truncate: 20 }}</p>
+            </a>
+            <strong class="post-meta pull-right">{{ post.date | date: '%Y.%-m.%-d'}}</strong>
+          </div> <!-- panel-body -->
+        </div> <!-- panel -->
+      </div> <!-- col-md-3 -->
+      {% endfor %}
+
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+
+{% for post in site.posts %}
+<div class="modal fade" id="{{ post.title | replace: ' ', '_'}}" tabindex="-1" role="dialog" aria-labbelledby="label1" aria-hidden="true">
+
+  <div class="modal-dialog" role="document" style="width: 100%">
+
+    <div class="modal-content" style="padding-left: 30%; padding-right: 30%">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title h2" id="label1">{{ post.title }}</p>
+      </div>
+
+      <div class="modal-body">
+        {{ post.content }}
+      </div>
+
+      <div class="modal-footer">
+        <p class="h4 pull-right">{{ post.date | date: '%Y.%-m.%-d'}}</p>
+      </div>
+
+    </div> <!-- modal-content -->
+
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
+{% endfor %}
