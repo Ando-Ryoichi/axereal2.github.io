@@ -83,60 +83,97 @@
            </div>
       </div>
     </div> <!-- row -->
-
-    <div class="row top-margin-md">
-      <div class="col-md-6 col-md-push-6">
-        <div class="visible-md visible-lg">
-          <p class="before-header top-margin-lg ">Player01</p>
-          <h2 class="section-heading">comming soon</h2>
-        </div>
-        <div class="hidden-md hidden-lg">
-          <p class="section-heading h3">Comming Soon</p>
-        </div>
-        <h3 class="section-subheading text-muted bottom-margin-sm">身長：not available<br>体重：not available<br>年齢：not available<br>コメント：not available</h3>
-        <!--<a href="#" class="btn btn-xl">Learn More</a>-->
-      </div>
-      <div class="col-md-6 col-md-pull-6">
-        <img src="img/portfolio/src/ray.png" class="img-responsive" alt="">
-      </div>
-    </div> <!-- row -->
-
-    <div class="row top-margin-lg">
-      <div class="col-md-6">
-        <div class="visible-md visible-lg">
-          <p class="before-header top-margin-lg">Player02</p>
-          <h2 class="section-heading">comming</h2>
-        </div>
-        <div class="hidden-md hidden-lg">
-          <p class="section-heading h3">Commin'/p>
-        </div>
-        <h3 class="section-subheading text-muted bottom-margin-sm">身長：192.00cm<br>体重：85.00kg<br>年齢：55<br>コメント：メメント・モリ</h3>
-        <!--<a href="#" class="btn btn-xl">Learn More</a>-->
-      </div>
-      <div class="col-md-6">
-        <img src="img/portfolio/src/thumb_8.jpg" class="img-responsive" alt="">
+<!-- ニュース -->
+<section id="news" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading visible-md visible-lg">ニュース-競技会情報</h2>
+        <p class="section-heading h3 hidden-md hidden-lg">ニュース-競技会情報</p>
+        <!-- <h3 class="section-subheading">最近のニュースです</h3> -->
       </div>
     </div> <!-- row -->
 
     <div class="row top-margin-md">
-      <div class="col-md-6 col-md-push-6">
-        <div class="visible-md visible-lg">
-          <p class="before-header top-margin-lg ">Player03</p>
-          <h2 class="section-heading">Commin'</h2>
-        </div>
-        <div class="hidden-md hidden-lg">
-          <p class="section-heading h3">player03</p>
-        </div>
-        <h3 class="section-subheading text-muted bottom-margin-sm">身長：N/A<br>体重：N/A<br>年齢：N/A<br>コメント：N/A</h3>
-        <!--<a href="#" class="btn btn-xl">Learn More</a>-->
-      </div>
-      <div class="col-md-6 col-md-pull-6">
-        <img src="img/portfolio/src/jerry.JPG" class="img-responsive" alt="">
-      </div>
+      {% for post in site.posts %}
+      <div class="col-md-3">
+        <div class="panel">
+          <a href="#{{ post.title | replace: ' ', '_' }}" data-toggle="modal">
+            <img src="{{ post.background }}"  alt="" width="100%" class="visible-md visible-lg">
+          </a>
+          <div class="panel-body">
+            <a href="#{{ post.title | replace: ' ', '_' }}_mobile" data-toggle="modal">
+              <h5 class="panel-heading hidden-md hidden-lg" style="padding: 0">{{ post.title }}</h5>
+            </a>
+            <h5 class="panel-heading visible-md visible-lg" style="padding: 0">{{ post.title }}</h5>
+            <a href="#{{ post.title | replace: ' ', '_' }}" data-toggle="modal">
+              <p class="panel-text">{{ post.content | truncate: 20 }}</p>
+            </a>
+            <strong class="post-meta pull-right">{{ post.date | date: '%Y.%-m.%-d'}}</strong>
+          </div> <!-- panel-body -->
+        </div> <!-- panel -->
+      </div> <!-- col-md-3 -->
+      {% endfor %}
+
     </div> <!-- row -->
-   
   </div> <!-- container -->
 </section>
+
+{% for post in site.posts %}
+<div class="modal fade" id="{{ post.title | replace: ' ', '_'}}" tabindex="-1" role="dialog" aria-labbelledby="label1" aria-hidden="true">
+
+  <div class="modal-dialog" role="document" style="width: 100%">
+
+    <div class="modal-content" style="padding-left: 30%; padding-right: 30%">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title h2" id="label1">{{ post.title }}</p>
+      </div>
+
+      <div class="modal-body">
+        {{ post.content }}
+      </div>
+
+      <div class="modal-footer">
+        <p class="h4 pull-right">{{ post.date | date: '%Y.%-m.%-d'}}</p>
+      </div>
+
+    </div> <!-- modal-content -->
+
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
+
+<!-- Mobile-->
+<div class="modal fade" id="{{ post.title | replace: ' ', '_'}}_mobile" tabindex="-1" role="dialog" aria-labbelledby="label1" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title h4" id="label1">{{ post.title }}</p>
+      </div>
+
+      <div class="modal-body">
+        {{ post.content }}
+      </div>
+
+      <div class="modal-footer">
+        <p class="h5 pull-right">{{ post.date | date: '%Y.%-m.%-d'}}</p>
+      </div>
+
+    </div> <!-- modal-content -->
+
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
+{% endfor %}
+
 
     <!-- 1 -->
 <section id="202004">
