@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Darumasan_Ga_Koronda",
+"dataUrl": "f27a239fe90443cb481b9f3d685f38b8.unityweb",
+"wasmCodeUrl": "66c57e45159a6be326e9065baa366b70.unityweb",
+"wasmFrameworkUrl": "1d7a32be0773a3bb5b315db817f79075.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}
