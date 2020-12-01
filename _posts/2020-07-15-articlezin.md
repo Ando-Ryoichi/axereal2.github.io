@@ -4,7 +4,7 @@ title: "ZINDORI開発開始"
 subtitle: ""
 author: Ryoichi Ando
 date:   2020-07-15
-background: '/img/posts/typo2.png'
+background: '/img/posts/news.png'
 ---
 # ZINDORI
 
