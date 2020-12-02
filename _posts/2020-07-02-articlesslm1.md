@@ -10,7 +10,6 @@ background: '/img/posts/news.png'
 ### どうなる！？2020の超人スポーツ
 ## 運営について
 
-[<img src="/img/posts/sslm01.png" alt="sslm01" width="100%">](http://superhuman-sports.org/news/20200625120002)
 
 超人スポーツ協会が主催する超人スポーツ公開会議のweb配信及び運営を行いました。
 詳しくは以下リンクにて、また公開会議の様子は以下にてご覧いただけます。
