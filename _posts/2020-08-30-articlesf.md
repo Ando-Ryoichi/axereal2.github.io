@@ -4,7 +4,7 @@ title: "SlideFusion SIGGRAPH ACCCEPT"
 subtitle: "Surrogacy Wheelchair with Implicit Eyegaze Modality Sharing"
 author: Ryoichi Ando
 date:   2020-08-30
-background: '/img/posts/news.png'
+background: '/img/posts/sf.png'
 ---
 
 # SIGGRAPH 2020 E-TECH 採択
